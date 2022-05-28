@@ -1,0 +1,101 @@
+/* css for scorpion car 
+auther : fawaz alhafiz 
+version : 2.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.clear_fix {
+    clear: both;
+    float: none;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.img_responsive {
+    width: 100%;
+}
+ ul {
+     list-style-type: none;
+ }
+
+ li {
+    display: inline;
+ }
+ a {
+     text-decoration: none;
+     color: white;
+ }
+/* ------------------------------------- logo and account section ------------------------------------------- */
+
+.container_full {
+    border: 1px solid rgb(245, 13, 13);
+    width: 90%;
+    margin: 0 auto;
+}
+.logo_and_account {
+    background-color: #443850;
+    color: white;
+    line-height: 90px;
+}
+
+.Logo {
+    border: 1px solid rgb(245, 13, 13);
+    width: 10%;
+    float: right;
+    position: relative;
+}
+
+.logo_text {
+    display: inline-block;
+    font-size: 2.3rem;
+    max-width: 100%;
+    font-family: cursive;
+    padding: 3%;
+    position: absolute;
+    top: 20%;
+    right: 0%;
+}
+
+.logo_image  {
+    display: inline-block;
+    height: 50px;
+}
+
+.main_nav {
+    border: 1px solid red;
+    float: right;
+    width: 40rem;
+    margin-right: 5rem;
+
+}
+
+.main_nav ul li {
+    padding: 3%;
+    font-weight: bold;
+}
+ .main_nav ul li a {
+    font-size: 1.4rem;
+ }
+
+ .account {
+     border: 1px solid red;
+     float: right;
+     width: 20%;
+     margin-right: 9rem;
+ }
+
+.account a {
+    padding: 1.5rem;
+    display: inline;
+    font-size: 1.3rem;
+    font-weight: lighter;
+}
