@@ -37,48 +37,46 @@ version : 2.0
 /* ------------------------------------- logo and account section ------------------------------------------- */
 
 .container_full {
-    border: 1px solid rgb(245, 13, 13);
+    border: 4px solid rgb(13, 245, 137);
     width: 90%;
     margin: 0 auto;
+    padding: 1%;
 }
 .logo_and_account {
     background-color: #443850;
-    color: white;
-    line-height: 90px;
+    color: white;    
 }
 
 .Logo {
     border: 1px solid rgb(245, 13, 13);
     width: 10%;
     float: right;
-    position: relative;
-}
-
-.logo_text {
-    display: inline-block;
-    font-size: 2.3rem;
-    max-width: 100%;
-    font-family: cursive;
-    padding: 3%;
-    position: absolute;
-    top: 20%;
-    right: 0%;
 }
 
 .logo_image  {
     display: inline-block;
-    height: 50px;
+    height: 3.5rem;
 }
 
 .main_nav {
     border: 1px solid red;
     float: right;
-    width: 40rem;
-    margin-right: 5rem;
+    width: 40%;
+    margin-right: 5%;
+    
+    /* flex-wrap: wrap; */
+    /* height: 100%; */
+    line-height: 3.4rem;
+}
 
+.main_nav ul {
+    margin: 0;
+    padding: 0 ;
+    /* display: flex; */
 }
 
 .main_nav ul li {
+    display: inline;
     padding: 3%;
     font-weight: bold;
 }
@@ -87,14 +85,14 @@ version : 2.0
  }
 
  .account {
-     border: 1px solid red;
-     float: right;
-     width: 20%;
-     margin-right: 9rem;
+     border: 1px solid rgb(76, 0, 255);
+     float: left;
+     width: 30%;
+     line-height: 3.5rem;
  }
 
 .account a {
-    padding: 1.5rem;
+    padding: 0.5rem;
     display: inline;
     font-size: 1.3rem;
     font-weight: lighter;
