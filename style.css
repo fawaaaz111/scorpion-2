@@ -1,99 +1,224 @@
-/* css for scorpion car 
-auther : fawaz alhafiz 
-version : 2.0
-*/
+.fa-magnifying-glass {
+    color: green;
+}
+@font-face {
+    font-family: 'changaregular';
+    src: url('changa-regular/changa-regular-webfont.woff2') format('woff2'),
+         url('changa-regular/changa-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
+/* --------------------css for all------------------------------------------------ */
+html {
+    direction: rtl;
+}
+:root {
+    --primary : #fff;
+    --secondary : #eee ;
+    --accent : #86c232;
+}
 * {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
     box-sizing: border-box;
 }
 
-.clear_fix {
-    clear: both;
-    float: none;
+a , a:hover {
+    text-decoration: none;
+    color: #eee;
 }
 
 .text_center {
     text-align: center;
 }
 
-.img_responsive {
-    width: 100%;
-}
- ul {
-     list-style-type: none;
- }
-
- li {
-    display: inline;
- }
- a {
-     text-decoration: none;
-     color: white;
- }
-/* ------------------------------------- logo and account section ------------------------------------------- */
-
 .container_full {
-    border: 4px solid rgb(13, 245, 137);
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
-    padding: 1%;
+    position: relative;
 }
-.logo_and_account {
-    background-color: #443850;
-    color: white;    
+
+/* --------------------css for header and logo------------------------------------------------ */
+
+.header {
+    padding: 0 2%;
+    background-color: #222629;
+    color: #eee;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
 }
 
 .Logo {
-    border: 1px solid rgb(245, 13, 13);
-    width: 10%;
-    float: right;
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
-.logo_image  {
-    display: inline-block;
-    height: 3.5rem;
+.Logo img {
+    width: 70px;
 }
 
-.main_nav {
-    border: 1px solid red;
-    float: right;
-    width: 40%;
-    margin-right: 5%;
-    
-    /* flex-wrap: wrap; */
-    /* height: 100%; */
-    line-height: 3.4rem;
+.Logo a {
+    display: flex;
+    align-items: center;
 }
 
-.main_nav ul {
-    margin: 0;
-    padding: 0 ;
-    /* display: flex; */
-}
-
-.main_nav ul li {
-    display: inline;
-    padding: 3%;
+.Logo a span {
+    padding: 15px;
+    font-family :cursive;
+    font-size: 2.5em;
     font-weight: bold;
+
 }
- .main_nav ul li a {
-    font-size: 1.4rem;
+.Logo a:hover {
+    color: #86c232;
+    /* font-size: 1.7em; */
+    /* transform: translateX() 1sec; */
+}
+ .main_nav ul {
+     list-style: none;
+     padding: 15px;
+     display: flex;
+     text-align: left;
+ }
+ .main_nav li {
+     padding: 10px;
+     display: flex;
  }
 
- .account {
-     border: 1px solid rgb(76, 0, 255);
-     float: left;
-     width: 30%;
-     line-height: 3.5rem;
+ .main_nav a {
+    font-size: 1.3em;
+    font-weight: 800;
  }
+
+ .main_nav a:hover {
+    color: #86c232;
+}
+
+.account {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: left;
+}
 
 .account a {
-    padding: 0.5rem;
-    display: inline;
-    font-size: 1.3rem;
-    font-weight: lighter;
+    padding: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
 }
+
+.account a:hover {
+    color: #86c232;
+}
+
+ul {
+    list-style-type: none;
+}
+
+    /* ----------------css for cars search ----------------------------------------- */
+ .cars_search {
+     min-height: 500px;
+     background-image: url("images/car-background.jpeg");
+     background-size:cover;
+     display: flex;
+     justify-content:space-evenly;
+     align-items: center;
+ }
+    .search_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flex-grow: 1; */
+        flex-shrink: 1;
+        background-color: white;
+        border: 1px solid red;
+    }
+
+    .search_box .search_button {
+        display: inline-block;
+        padding: 20px;
+        border-radius: 10px 0 0 10px;
+        background-color: var(--accent);
+        border: none;
+        font-size: 1.3em;
+        cursor: pointer;
+
+    }
+
+    .search_box button:hover {
+        color: var(--primary);
+    }
+
+    .search_box input {
+        width: 100%;
+        padding: 20px;
+        border: none;
+        background-color: #eee;
+        border-radius: 0px 10px 10px 0;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+
+    .search_box input:focus {
+        outline: var(--accent);
+    }
+
+    /* filters boxs */
+    .filters_box {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .filter_item {
+        width: 150px;
+        margin: 10px;
+        border: 2px solid red;
+        font-size: 20px;
+        font-weight: lighter;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .filter_type::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border: 8px solid;
+        border-color: var(--accent) transparent transparent transparent;
+    }
+
+    .filter_item ul {
+        display: none;
+        position: absolute;
+        background-color: white;
+        top: 90px;
+        width: 150px;
+        padding: 10%;
+        border-radius: 10px;
+
+    }
+
+    .filter_item ul li  {
+        padding-bottom: 10%;
+    }
+
+    .filter_item ul li:last-child {
+        padding-bottom: 0%;
+    }
+
+    .filter_item ul li a {
+        color: black;
+    }
+    .filter_type {
+        padding: 20px;
+    }
