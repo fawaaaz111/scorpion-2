@@ -3,6 +3,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width , initial-scale=1.0">
     <link rel="stylesheet" href="style_2.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
     <title>Scorpion Cars Trade</title>
 </head>
 
@@ -42,26 +44,49 @@
     
 
     <!-- search and filters starts here -->
-    <div class="container_full"></div>
+    <div class="container_full">
         <section class="cars_search">
+            <div class="filters_box">
+                <div class="filter_item price_filter">
+                    <div class="filter_type">السعر</div>
+
+                    <ul>
+                        <li>60$</li>
+                        <li>90$</li>
+                        <li>100$</li>
+                    </ul>
+                </div>
+                
+                <div class="filter_item brand_filter">
+                    <div class="filter_type">نوع السيارة</div>
+
+                    <ul>
+                        <li>bmw</li>
+                        <li>mercides</li>
+                        <li>toyota</li>
+                    </ul>
+                </div>
+
+                <div class="filter_item year_filter">
+                    <div class="filter_type">سنة الصنع</div>
+
+                    <ul>
+                        <li>2020</li>
+                        <li>2010</li>
+                        <li>2000</li>
+                    </ul>
+                </div>
+            </div>
+
+
             <div class="search_box">
                 <input type="search" name="search" placeholder="ابحث عن سيارة">
                 <button type="submit" class="search_button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                     <!-- <img src="images/magnifying-glass-solid.svg" alt=""> -->
                     بحـث
                 </button>
             </div>
-
-            <div>
-                <span>السعر</span>
-                <select>
-                    <option value="car 1"></option>
-                    <option value="car 1"></option>
-                    <option value="car 1"></option>
-                </select>
-            </div>
-
-            
         </section>
     </div>
     <!-- search and filters Ends here -->

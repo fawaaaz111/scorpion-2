@@ -1,4 +1,6 @@
-
+.fa-magnifying-glass {
+    color: green;
+}
 @font-face {
     font-family: 'changaregular';
     src: url('changa-regular/changa-regular-webfont.woff2') format('woff2'),
@@ -35,6 +37,7 @@ a , a:hover {
 .container_full {
     width: 100%;
     margin: 0 auto;
+    position: relative;
 }
 
 /* --------------------css for header and logo------------------------------------------------ */
@@ -114,22 +117,27 @@ a , a:hover {
     color: #86c232;
 }
 
+ul {
+    list-style-type: none;
+}
+
     /* ----------------css for cars search ----------------------------------------- */
  .cars_search {
      min-height: 500px;
      background-image: url("images/car-background.jpeg");
      background-size:cover;
      display: flex;
-     justify-content: center;
+     justify-content:space-evenly;
      align-items: center;
  }
     .search_box {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-grow: 1;
-        padding: 1%;
+        /* flex-grow: 1; */
+        flex-shrink: 1;
         background-color: white;
+        border: 1px solid red;
     }
 
     .search_box .search_button {
@@ -139,6 +147,7 @@ a , a:hover {
         background-color: var(--accent);
         border: none;
         font-size: 1.3em;
+        cursor: pointer;
 
     }
 
@@ -147,14 +156,69 @@ a , a:hover {
     }
 
     .search_box input {
-        width: 50%;
+        width: 100%;
         padding: 20px;
         border: none;
         background-color: #eee;
         border-radius: 0px 10px 10px 0;
         font-size: 1.3em;
+        cursor: pointer;
     }
 
     .search_box input:focus {
         outline: var(--accent);
+    }
+
+    /* filters boxs */
+    .filters_box {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .filter_item {
+        width: 150px;
+        margin: 10px;
+        border: 2px solid red;
+        font-size: 20px;
+        font-weight: lighter;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .filter_type::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border: 8px solid;
+        border-color: var(--accent) transparent transparent transparent;
+    }
+
+    .filter_item ul {
+        display: block;
+        position: absolute;
+        background-color: white;
+        top: 90px;
+        width: 150px;
+        padding: 10%;
+        border-radius: 10px;
+
+    }
+
+    .filter_item ul li  {
+        padding-bottom: 10%;
+    }
+
+    .filter_item ul li:last-child {
+        padding-bottom: 0%;
+    }
+
+    .filter_item ul li a {
+        color: black;
+    }
+    .filter_type {
+        padding: 20px;
     }
