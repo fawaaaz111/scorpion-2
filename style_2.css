@@ -7,9 +7,14 @@
     font-style: normal;
 
 }
-
+/* --------------------css for all------------------------------------------------ */
 html {
     direction: rtl;
+}
+:root {
+    --primary : #fff;
+    --secondary : #eee ;
+    --accent : #86c232;
 }
 * {
     margin: 0;
@@ -32,6 +37,8 @@ a , a:hover {
     margin: 0 auto;
 }
 
+/* --------------------css for header and logo------------------------------------------------ */
+
 .header {
     padding: 0 2%;
     background-color: #222629;
@@ -42,7 +49,7 @@ a , a:hover {
     justify-content:space-between;
 }
 
-.Logo { border: 1px solid red;
+.Logo {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -105,4 +112,49 @@ a , a:hover {
 
 .account a:hover {
     color: #86c232;
- {
+}
+
+    /* ----------------css for cars search ----------------------------------------- */
+ .cars_search {
+     min-height: 500px;
+     background-image: url("images/car-background.jpeg");
+     background-size:cover;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+    .search_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        padding: 1%;
+        background-color: white;
+    }
+
+    .search_box .search_button {
+        display: inline-block;
+        padding: 20px;
+        border-radius: 10px 0 0 10px;
+        background-color: var(--accent);
+        border: none;
+        font-size: 1.3em;
+
+    }
+
+    .search_box button:hover {
+        color: var(--primary);
+    }
+
+    .search_box input {
+        width: 50%;
+        padding: 20px;
+        border: none;
+        background-color: #eee;
+        border-radius: 0px 10px 10px 0;
+        font-size: 1.3em;
+    }
+
+    .search_box input:focus {
+        outline: var(--accent);
+    }
