@@ -1,6 +1,3 @@
-.fa-magnifying-glass {
-    color: green;
-}
 @font-face {
     font-family: 'changaregular';
     src: url('changa-regular/changa-regular-webfont.woff2') format('woff2'),
@@ -17,6 +14,7 @@ html {
     --primary : #fff;
     --secondary : #eee ;
     --accent : #86c232;
+    --lite-black : #222629;
 }
 * {
     margin: 0;
@@ -38,6 +36,11 @@ a , a:hover {
     width: 100%;
     margin: 0 auto;
     position: relative;
+}
+
+.container_80 {
+    width: 80%;
+    margin: 0 auto;
 }
 
 /* --------------------css for header and logo------------------------------------------------ */
@@ -123,21 +126,24 @@ ul {
 
     /* ----------------css for cars search ----------------------------------------- */
  .cars_search {
-     min-height: 500px;
-     background-image: url("images/car-background.jpeg");
-     background-size:cover;
-     display: flex;
-     justify-content:space-evenly;
-     align-items: center;
+     
+     background-image: linear-gradient(to bottom ,#222629, #111);
+     /* border: 2px solid red; */
+ }
+
+ .car_search {
+    min-height: 10em;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
  }
     .search_box {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* flex-grow: 1; */
-        flex-shrink: 1;
-        background-color: white;
-        border: 1px solid red;
+        flex-grow: 1;
+        /* background-color: white; */
+        /* border: 1px solid red; */
     }
 
     .search_box .search_button {
@@ -159,39 +165,48 @@ ul {
         width: 100%;
         padding: 20px;
         border: none;
-        background-color: #eee;
+        background-color: var(--secondary);
+        color: var(--lite-black);
         border-radius: 0px 10px 10px 0;
         font-size: 1.3em;
         cursor: pointer;
     }
 
     .search_box input:focus {
-        outline: var(--accent);
+        outline: 1px solid var(--accent);
     }
 
     /* filters boxs */
     .filters_box {
-        background-color: white;
+        /* background-color: white; */
         display: flex;
         align-items: center;
         justify-content: space-evenly;
     }
 
     .filter_item {
-        width: 150px;
+        width: 180px;
         margin: 10px;
-        border: 2px solid red;
+        background-color: var(--secondary);
+        /* border: 2px solid red; */
         font-size: 20px;
         font-weight: lighter;
         position: relative;
         border-radius: 10px;
     }
+    .filter_item:focus {
+        outline: var(--accent);
+    }
+    .filter_type {
+        padding: 20px;
+        user-select: none;
+    }
 
     .filter_type::after {
         content: "";
         position: absolute;
-        top: 50%;
-        left: 0;
+        top: 55%;
+        left: 20%;
         transform: translate(-50%, -50%);
         border: 8px solid;
         border-color: var(--accent) transparent transparent transparent;
@@ -208,8 +223,13 @@ ul {
 
     }
 
+    .filter_item ul.active {
+        display: block;
+    }
+
     .filter_item ul li  {
         padding-bottom: 10%;
+        user-select: none;
     }
 
     .filter_item ul li:last-child {
@@ -219,6 +239,4 @@ ul {
     .filter_item ul li a {
         color: black;
     }
-    .filter_type {
-        padding: 20px;
-    }
+    
