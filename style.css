@@ -9,6 +9,9 @@
 /* --------------------css for all------------------------------------------------ */
 html {
     direction: rtl;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
 }
 :root {
     --primary : #fff;
@@ -46,6 +49,9 @@ a , a:hover {
 /* --------------------css for header and logo------------------------------------------------ */
 
 .header {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
     padding: 0 2%;
     background-color: #222629;
     color: #eee;
@@ -56,6 +62,7 @@ a , a:hover {
 }
 
 .Logo {
+    flex-basis: 20%;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -81,6 +88,13 @@ a , a:hover {
     color: #86c232;
     /* font-size: 1.7em; */
     /* transform: translateX() 1sec; */
+}
+        /* ------   main anv section    -------- */
+header nav {
+    flex-basis: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
  .main_nav ul {
      list-style: none;
@@ -138,12 +152,10 @@ ul {
     align-items: center;
  }
     .search_box {
+        flex-basis: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-grow: 1;
-        /* background-color: white; */
-        /* border: 1px solid red; */
     }
 
     .search_box .search_button {
@@ -179,14 +191,16 @@ ul {
     /* filters boxs */
     .filters_box {
         /* background-color: white; */
+        flex-basis: 40%;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
     }
 
     .filter_item {
-        width: 180px;
-        margin: 10px;
+        width: 33%;
+        height: 65px;
+        margin: 5px;
         background-color: var(--secondary);
         /* border: 2px solid red; */
         font-size: 20px;
@@ -198,15 +212,19 @@ ul {
         outline: var(--accent);
     }
     .filter_type {
-        padding: 20px;
+        padding: 20px 0px;
         user-select: none;
+        /* text-align: right; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .filter_type::after {
         content: "";
         position: absolute;
         top: 55%;
-        left: 20%;
+        left: 10%;
         transform: translate(-50%, -50%);
         border: 8px solid;
         border-color: var(--accent) transparent transparent transparent;
@@ -217,10 +235,11 @@ ul {
         position: absolute;
         background-color: white;
         top: 90px;
-        width: 150px;
+        max-width: 130px;
         padding: 10%;
-        border-radius: 10px;
-
+        border-radius: 10px 10px 0 0;
+        border-left: 0.5px solid #111;
+        border-right: 0.5px solid #111;
     }
 
     .filter_item ul.active {
@@ -239,4 +258,89 @@ ul {
     .filter_item ul li a {
         color: black;
     }
-    
+
+    .fa-xmark {
+       position: absolute;
+       right: 10px;
+       top: 10px;
+    }
+    .fa-solid {
+        opacity: 1;
+        font-size: 22px;
+    }
+    @media only screen and (max-width: 600px) {
+        .fa-solid {
+            opacity: 1;
+        }
+        /* ----     search filteres      ----- */
+        .car_search {
+            flex-direction: column-reverse;
+        }
+        .search_box {
+            width: 80%;
+            font-size: 15px;
+        }
+        .filters_box {
+            width: 80%;
+        }
+        .filter_item {
+            height: 40px;
+            font-size: 15px;
+        }
+        .filter_type {
+            padding: 12px 0px;
+        }
+        .filter_type::after {
+            border: 5px solid;
+            border-color: var(--accent) transparent transparent transparent;
+        }
+
+        /* -----    navigation section      ------- */
+        header nav {
+            /* width: 170px; */
+            position: fixed;
+            height: 100vh;
+            width: 30%;
+            background-color: var(--accent);
+            left: -30%;
+            top: 0;
+            z-index: 1;
+            flex-direction: column;
+            text-align: center;
+            justify-content: start;
+            font-size: 15px;
+        }
+        .main_nav a:hover {
+            color: var(--lite-black);
+        }
+        .main_nav ul {
+            flex-wrap: wrap;
+            padding: 70px 0;
+        }
+        .main_nav li {
+            justify-content: center;
+            flex-basis: 100%;
+            display: flex;
+            border-bottom: 0.5px solid var(--lite-black);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        .account {
+            flex-wrap: wrap;
+            flex-grow: 0;
+            justify-content: center;
+        }
+        .account a {
+            display: block;
+            width: 100%;
+            border-bottom: 0.5px solid var(--lite-black);
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+        .account a:hover {
+            color: var(--lite-black);
+        }
+        .account span{
+            display: none;
+        }
+    }

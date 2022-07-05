@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width , initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" media="screen">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <title>Scorpion Cars Trade</title>
     <script src="jquery/jquery-3.6.0.js" async></script>
     <script src="script.js" async></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <!-- logo and account section starts here -->
-    <div class="container_full">
-    <header class="header">
-        
-            <div class="Logo text_center">
-                <a href="#">
-                    <img class="img_responsive" src="images/scorpion-shape.png" alt="scorpion logo">
-                    <span>Scorpion</span>
-                </a>
-            </div>
+        <header class="header container_full">
+                <div class="Logo text_center">
+                    <a href="#">
+                        <img class="img_responsive" src="images/scorpion-shape.png" alt="scorpion logo">
+                        <span>Scorpion</span>
+                    </a>
+                </div>
 
-            <nav class="main_nav">
-                <ul class="text_center">
-                    <li>
-                        <a href="#">الرئيسية</a>
-                    </li>
-                    <li>
-                        <a href="#">المعرض</a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="account">
-                <a href="#">تسجيل دخول</a>
-                <span>/</span>
-                <a href="#">تسجيل</a> 
-            </div>
-            <!-- <div class="clear_fix"></div> -->
-
-    </header>
-    </div>
+                <nav id="nav">
+                    <div class="main_nav">
+                        <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                        <ul class="text_center">
+                            <li>
+                                <a href="#">الرئيسية</a>
+                            </li>
+                            <li>
+                                <a href="#">المعرض</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="account">
+                        <a href="#">تسجيل دخول</a>
+                        <span>/</span>
+                        <a href="#">تسجيل</a> 
+                    </div>
+                </nav>
+                <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </header>
     <!-- logo and account section Ends here -->
     
 
     <!-- search and filters starts here -->
     <!-- <div class="container_full"> -->
-        <section class="cars_search">
+        <section class="cars_search container_full">
             <div class="container_80 car_search">
                 <div class="filters_box">
                     <div class="filter_item price_filter">
@@ -86,7 +87,6 @@
                     <input type="search" name="search" placeholder="ابحث عن سيارة">
                     <button type="submit" class="search_button">
                         <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-                        <!-- <img src="images/magnifying-glass-solid.svg" alt=""> -->
                         بحـث
                     </button>
                 </div>
@@ -127,5 +127,23 @@
         <p>ALL Rights Reserved 2022 {cmark}</p>
     </section>
     <!-- social media footer ends here -->
+
+<script type="application/javascript">
+
+    const navBar = document.getElementById("nav");
+    const hideIcon = document.getElementsByClassName("fa-xmark")[0];
+    const showIcon = document.getElementsByClassName("fa-bars")[0];
+    // console.log(hideIcon);
+    
+    function showMenu() {
+        navBar.style.left = "0";
+        hideIcon.style.opacity = "1";
+    }
+    
+    function hideMenu() {
+        navBar.style.left = "-30%";
+        showIcon.style.opacity = "1";
+    }
+</script>
 </body>
 </html>
