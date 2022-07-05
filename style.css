@@ -139,7 +139,8 @@ header nav {
      }
      .fa-bars {
         left: 20px;
-        top: 50px;
+        top: 50%;
+        transform: translateY(-50%);
      }
     header nav {
         padding: 2% 5% 2% 5% ;
