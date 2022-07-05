@@ -49,6 +49,9 @@ a , a:hover {
 /* --------------------css for header and logo------------------------------------------------ */
 
 .header {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
     padding: 0 2%;
     background-color: #222629;
     color: #eee;
