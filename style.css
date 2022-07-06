@@ -112,33 +112,34 @@ header nav {
 }
 .fa-solid {
     position:absolute;
-    font-size: 22px;
+    font-size: 24px;
     opacity: 0;
 }
 
 /* --------      media query for header    ------- */
+/* less than 768px */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .header {
-        font-size: 13px;
+        font-size: 14px;
     }
-    .Logo {
-        flex-basis: 30%;
-        align-items: center;
-        padding: 0;
+    .Logo img {
+        width: 65px;
+    }
+    .Logo a span {
+        font-size: 2.3em;
     }
 
     /* -------  nav section -------- */
-
     .fa-solid {
         opacity: 1;
     }
     .fa-xmark {
-        right: 10px;
-        top: 10px;
+        right: 5%;
+        top: 2%;
      }
      .fa-bars {
-        left: 20px;
+        left: 3%;
         top: 50%;
         transform: translateY(-50%);
      }
@@ -146,7 +147,7 @@ header nav {
         padding: 2% 5% 2% 5% ;
         position: fixed;
         height: 100vh;
-        width: 30%;
+        width: 70%;
         background-color: var(--accent);
         left: 0%;
         top: 0;
@@ -155,6 +156,9 @@ header nav {
         text-align: center;
         justify-content: start;
         font-size: 1em;
+    }
+    .main_nav {
+        width: 100%;
     }
     .main_nav a:hover {
         color: var(--lite-black);
@@ -167,26 +171,71 @@ header nav {
         justify-content: center;
         flex-basis: 100%;
         display: flex;
-        border-bottom: 0.5px solid var(--lite-black);
         margin-bottom: 10px;
         padding-bottom: 10px;
     }
+    .main_nav li a {
+        width: 90%;
+        border-bottom: 0.5px solid var(--lite-black);
+        text-align: center;
+        padding-bottom: 2%;
+    }
     .account {
+        width: 100%;
         flex-wrap: wrap;
         flex-grow: 0;
         justify-content: center;
     }
     .account a {
         display: block;
-        width: 100%;
+        width: 60%;
         border-bottom: 0.5px solid var(--lite-black);
         margin-bottom: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 2%;
     }
     .account a:hover {
         color: var(--lite-black);
     }
     .account span{
         display: none;
+    }
+    
+}
+
+/* less than 768px */
+
+@media only screen and (max-width: 600px) {
+    .header {
+        font-size: 13px;
+    }
+    .Logo img {
+        width: 60px;
+    }
+    .Logo a span {
+        font-size: 2.1em;
+    }
+
+    /* -------  nav section -------- */
+    .fa-solid {
+        font-size: 20px;
+    }
+}
+
+/* less than 300px */
+
+@media only screen and (max-width: 350px) {
+    .header {
+        font-size: 11px;
+    }
+    .Logo img {
+        width: 50px;
+    }
+    .Logo a span {
+        font-size: 1.9em;
+    }
+      /* -------  nav section -------- */
+
+    .fa-solid {
+        font-size: 17px;
     }
 }
