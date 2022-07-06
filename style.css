@@ -30,7 +30,7 @@ ul {
 
 .header {
     width: 100%;
-    min-height: 10vh;
+    max-height: 10vh;
     position: relative;
     padding: 0 30px;
     background-color: #222629;
@@ -203,7 +203,7 @@ header nav {
     
 }
 
-/* less than 768px */
+/* less than 600px */
 
 @media only screen and (max-width: 600px) {
     .header {
@@ -299,6 +299,7 @@ header nav {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    max-width: 600px;
 }
 .filter_item {
     flex-basis: 30%;
@@ -318,6 +319,7 @@ header nav {
     padding: 5px 0px;
     position: relative;
     user-select: none;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -325,9 +327,9 @@ header nav {
 .filter_type::after {
     content: "";
     position: absolute;
-    top: 55%;
+    top: 40%;
     left: 10%;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%);
     border: 7px solid;
     border-color: var(--accent) transparent transparent transparent;
 }
@@ -335,10 +337,108 @@ header nav {
     display: none;
     position: absolute;
     background-color: white;
-    top: 90px;
-    max-width: 130px;
+    top: 70px;
+    width: 100%;
     padding: 10%;
+    text-align: center;
     border-radius: 10px 10px 0 0;
     border-left: 0.5px solid #111;
     border-right: 0.5px solid #111;
+}
+.filter_item ul.active {
+    display: block;
+}
+.filter_item ul li  {
+    padding-bottom: 10%;
+    user-select: none;
+}
+.filter_item ul li:last-child {
+    padding-bottom: 0%;
+}
+.filter_item ul li a {
+    color: black;
+}
+
+/* --------------------------------------------------------------- */
+/* media query for car saerch and search filters */
+
+/* less than 768px */
+
+@media only screen and (max-width: 768px) {
+    .search_box .search_button {
+        padding: 12px;
+        font-size: 1.1em;
+    }
+    .search_box input {
+        padding: 12px;
+        font-size: 1.1em;
+    }
+
+    /* filters boxs */
+    .filter_item {
+        height: 30px;
+        font-size: 14px;
+        text-align: right;
+    }
+    .filter_type {
+        padding: 6px 10px;
+        justify-content: end;
+    }    
+}
+
+/* less than 600px */
+@media only screen and (max-width: 600px) {
+    .search_box .search_button {
+        padding: 10px;
+        font-size: .9em;
+    }
+    .search_box input {
+        padding: 10px;
+        font-size: .9em;
+    }
+
+    /* filters boxs */
+    .filter_item {
+        height: 25px;
+        font-size: 12px;
+        text-align: right;
+    }
+    .filter_type {
+        padding: 4px 10px;
+        justify-content: end;
+        min-width: 75px;
+
+    }
+}
+
+/* less than 300px */
+
+@media only screen and (max-width: 350px) {
+    .search_box .search_button {
+        padding: 8px;
+        font-size: .7em;
+    }
+    .search_box input {
+        padding: 8px;
+        font-size: .7em;
+    }
+
+    /* filters boxs */
+    .filter_item {
+        height: 20px;
+        font-size: 10px;
+        text-align: right;
+    }
+    .filter_type {
+        padding: 2px 10px;
+        min-width: 60px;
+        justify-content: end;
+    }
+    .filter_type::after {
+        top: 40%;
+        left: 10%;
+        transform: translate(-40%);
+        border: 5px solid;
+        border-color: var(--accent) transparent transparent transparent;
+    }
 }
