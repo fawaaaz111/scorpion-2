@@ -48,9 +48,18 @@
 
     <!-- search and filters starts here -->
     <!-- <div class="container_full"> -->
-        <section class="cars_search container_full">
-            <div class="container_80 car_search">
+        <section class="cars_search ">
+            <div class="car_search">
+                <div class="search_box">
+                    <input type="search" name="search" placeholder="ابحث عن سيارة">
+                    <button type="submit" class="search_button">
+                        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                        بحـث
+                    </button>
+                </div>
+
                 <div class="filters_box">
+                    <i class="fa-solid fa-filter-list"></i>
                     <div class="filter_item price_filter">
                         <div class="filter_type">السعر</div>
 
@@ -80,16 +89,7 @@
                             <li>2000</li>
                         </ul>
                     </div>
-                </div>
-
-
-                <div class="search_box">
-                    <input type="search" name="search" placeholder="ابحث عن سيارة">
-                    <button type="submit" class="search_button">
-                        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-                        بحـث
-                    </button>
-                </div>
+                </div>                
             </div>
         </section>
     <!-- </div> -->
@@ -137,11 +137,13 @@
     
     function showMenu() {
         navBar.style.left = "0";
+        navBar.style.display = "block";
         hideIcon.style.opacity = "1";
     }
     
     function hideMenu() {
         navBar.style.left = "-70%";
+        navBar.style.display = "none";
         showIcon.style.opacity = "1";
     }
 </script>
