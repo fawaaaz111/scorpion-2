@@ -2,19 +2,39 @@
     script for scorpion cars website
     auther : fawaz alhafiz
     version : 1.0
+    language : pure javascript
 */
 
- /*  ----------------------------------jquery for showing filters results in the search section ------------------- */
 
- $(document).ready(function() { // make sure the document is done downloaded
-    // alert("fawaz");
-    $(".filter_type").click(function() {
-        $(this).siblings("ul").toggleClass("active"); // taeget the list with the class "active"
-    });
+if(document.readyState == "loading") { // check if the page is still loading
+    document.addEventListener("DOMContentLoaded", ready) // listen for the event to start function ready
+}
+else {
+    ready(); // if the page already loaded .. then start the script
+}
 
-    $(".filter_item ul li").click(function() {
-        var text = $(this).text(); // get the text from the list item which is pressed
-        $(this).parent().siblings(".filter_type").text(text);// select the "filter type" div to show the text on
-        $(".filter_item ul").removeClass("active");
-    });
-}) ;
+function ready() {
+    // toggling the acive class when press the filter .. display it
+    const filterType = document.getElementsByClassName("filter_type"); // get all the div's with class name "filter type"
+    for(let i = 0; i < filterType.length; i++) {// get into each indivisual one's
+        filterType[i].addEventListener("click", () => {
+            const filterMenu = filterType[i].nextElementSibling; // get the filter menu that next to filter item
+            filterMenu.classList.toggle("active");
+
+
+            // show the list text inside the "filter type" div's
+            const filterListItem = filterMenu.getElementsByClassName("filter_field");
+                for(let j = 0; j < filterListItem.length; j++) {
+                    // console.log(filterListItem.length);
+                    filterListItem[j].addEventListener("click", () => {
+                    let listText= filterListItem[j].textContent; // get the text from the list item to append it later to the filter type label
+                        // console.log(listText);
+                        filterType[i].innerText = listText ;
+                        filterMenu.classList.remove("active") // when finishing all hide the filter menu
+                    })
+                };
+        });
+    };
+}
+
+ 
