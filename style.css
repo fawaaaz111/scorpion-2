@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
 /* --------------------css for all------------------------------------------------ */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 100px
+    ;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Amiri', serif;
     line-height: 1.5;
 }
 :root {
@@ -32,7 +41,7 @@ ul {
     width: 100%;
     max-height: 10vh;
     position: relative;
-    padding: 0 30px;
+    padding: 3em 0em;
     background-color: #222629;
     color: var(--secondary);
     display: flex;
@@ -104,7 +113,7 @@ header nav {
 }
 .account a {
     padding: 1%;
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: 700;
 }
 .account a:hover {
@@ -114,6 +123,8 @@ header nav {
     position:absolute;
     font-size: 24px;
     opacity: 0;
+    /* display: none; */
+    cursor: pointer;
 }
 
 /* --------      media query for header    ------- */
@@ -169,11 +180,12 @@ header nav {
         padding: 70px 0;
     }
     .main_nav li {
+        padding: 10% 15%;
         justify-content: center;
         flex-basis: 100%;
         display: flex;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
     .main_nav li a {
         width: 90%;
@@ -263,30 +275,29 @@ header nav {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .search_box .search_button {
     display: inline-block;
     padding: 15px;
+    font-size: 1.1em;
+    min-height: 100%;
     border-radius: 10px 0 0 10px;
     background-color: var(--accent);
-    border: none;
-    font-size: 1.3em;
-    cursor: pointer;
 }
 .search_box button:hover {
     color: var(--primary);
 }
 .search_box input {
     width: 100%;
+    min-height: 100%;
     padding: 15px;
-    border: none;
     background-color: var(--secondary);
     color: var(--lite-black);
     border-radius: 0px 10px 10px 0;
-    font-size: 1.3em;
-    cursor: pointer;
     text-align: right;
     font-weight: 100;
+    font-size: 1.1em;
 }
 .search_box input:focus {
     outline: .5px solid var(--accent);
@@ -442,3 +453,168 @@ header nav {
         border-color: var(--accent) transparent transparent transparent;
     }
 }
+
+/* ------------------------------ products section ------------------------- */
+.cars_gallery
+ {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+  }
+  .product_category {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+  }
+  
+  .product_conatainer {
+    padding: 0 5vw;
+    display: flex;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    background-color: #eee;
+  }
+  .product_conatainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .product_card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 20px;
+  }
+  
+  .product_iamges {  
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+  .product_thumb {
+    width: 100%;
+    height: 100%;
+    object-fit:scale-down;
+  }
+  
+  .disccount_tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #009688;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+  }
+  .card_button{
+    position:absolute ;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+    opacity: 0;
+  }
+  .product_card:hover .card_button {
+    opacity: 1;
+  }
+  .card_button:hover {
+    background-color: #009688;
+    color: #fff;
+  }
+  
+  .product_info {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+  }
+  .product_brand {
+    text-transform: uppercase;
+  }
+  .product_short_description {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    text-transform: capitalize;
+    margin: 5px 0;
+    opacity: 0.5;
+  }
+  
+  .price {
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .actual_price {
+    margin-left: 5px;
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+  
+  .pre_btn, .nxt_btn{
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100% );
+    cursor: pointer;
+    z-index: 9;
+  }
+  .pre_btn {
+    transform: rotate(180deg);
+    left: 0;
+  }
+  .nxt_btn {
+    right: 0;
+  }
+  
+  .pre_btn img, .nxt_btn img{
+    opacity: 0.2;
+  }
+  .pre_btn:hover img, .nxt_btn:hover img{
+    opacity: 1;
+  }
+  
+  .collection_container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: (2, 1fr);
+    grid-gap: 10px;
+  }
+  .collection {
+    position: relative;
+  }
+  .collection img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+  }
+  .collection p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 50px;
+    color: #fff;
+  }
+  .collection:nth-col(3) {
+    grid-column: span 2;
+    margin-bottom: 10px;
+  }

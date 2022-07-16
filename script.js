@@ -14,6 +14,8 @@ else {
 }
 
 function ready() {
+
+   
     // toggling the acive class when press the filter .. display it
     const filterType = document.getElementsByClassName("filter_type"); // get all the div's with class name "filter type"
     for(let i = 0; i < filterType.length; i++) {// get into each indivisual one's
@@ -35,6 +37,49 @@ function ready() {
                 };
         });
     };
+
+    // hideMenu(navBar , showIcon);
+    // showMenu(navBar , hideIcon);
 }
 
- 
+    // show and hide menu according to the view port width
+    const navBar = document.getElementById("nav");
+    const hideIcon = document.getElementsByClassName("fa-xmark")[0];
+    const showIcon = document.getElementsByClassName("fa-bars")[0];
+        
+       function showMenu() {
+
+        navBar.style.left = "0";
+        navBar.style.display = "block";
+        hideIcon.style.opacity = "1";
+    }
+    
+    function hideMenu () {
+
+        navBar.style.left = "-70%";
+        navBar.style.display = "none";
+        showIcon.style.opacity = "1";
+    }
+
+
+    // first get the product  container and the and the next , preview buttons by the DOM  
+    const productContainers = [...document.querySelectorAll('.product_conatainer')];
+    const nxtBtn = [...document.querySelectorAll('.nxt_btn')];
+    const preBtn = [...document.querySelectorAll('.pre_btn')];
+
+    productContainers.forEach((item, i) => {
+        let cardContanier = [...item.querySelectorAll(".product_card")] ; // get the card conainer to later get it's width as a reference to sroll left and right
+        let containerDimensions = cardContanier[i].getBoundingClientRect();// get DOMRect info which contain the width
+        // console.log(containerDimensions);
+        let containerWidth = containerDimensions.width;
+
+        // when ever scroll left or right add or subtract the card width fom the all container width
+        nxtBtn[i].addEventListener('click', () => {
+            item.scrollLeft += containerWidth;
+        })
+
+        preBtn[i].addEventListener('click', () => {
+            item.scrollLeft -= containerWidth;
+        })
+        })
+
