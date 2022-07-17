@@ -4,17 +4,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" media="screen">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css"> -->
     <title>Scorpion Cars Trade</title>
-    <script src="jquery/jquery-3.6.0.js" async></script>
-    <script src="script.js" async></script>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <!-- logo and account section starts here -->
-        <header class="header container_full">
+        <header class="header">
                 <div class="Logo text_center">
                     <a href="#">
                         <img class="img_responsive" src="images/scorpion-shape.png" alt="scorpion logo">
@@ -48,41 +47,8 @@
 
     <!-- search and filters starts here -->
     <!-- <div class="container_full"> -->
-        <section class="cars_search container_full">
-            <div class="container_80 car_search">
-                <div class="filters_box">
-                    <div class="filter_item price_filter">
-                        <div class="filter_type">السعر</div>
-
-                        <ul>
-                            <li>60$</li>
-                            <li>90$</li>
-                            <li>100$</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="filter_item brand_filter">
-                        <div class="filter_type">نوع السيارة</div>
-
-                        <ul>
-                            <li>bmw</li>
-                            <li>mercides</li>
-                            <li>toyota</li>
-                        </ul>
-                    </div>
-
-                    <div class="filter_item year_filter">
-                        <div class="filter_type">سنة الصنع</div>
-
-                        <ul>
-                            <li>2020</li>
-                            <li>2010</li>
-                            <li>2000</li>
-                        </ul>
-                    </div>
-                </div>
-
-
+        <section class="cars_search ">
+            <div class="car_search">
                 <div class="search_box">
                     <input type="search" name="search" placeholder="ابحث عن سيارة">
                     <button type="submit" class="search_button">
@@ -90,6 +56,39 @@
                         بحـث
                     </button>
                 </div>
+
+                <div class="filters_box">
+                    <i class="fa-solid fa-filter-list"></i>
+                    <div class="filter_item price_filter">
+                        <div class="filter_type">السعر</div>
+
+                        <ul class="filter_menu">
+                            <li class="filter_field">60$</li>
+                            <li class="filter_field">90$</li>
+                            <li class="filter_field">100$</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="filter_item brand_filter">
+                        <div class="filter_type">نوع السيارة</div>
+
+                        <ul class="filter_menu">
+                            <li class="filter_field">bmw</li>
+                            <li class="filter_field">mercides</li>
+                            <li class="filter_field">toyota</li>
+                        </ul>
+                    </div>
+
+                    <div class="filter_item year_filter">
+                        <div class="filter_type">سنة الصُنع</div>
+
+                        <ul class="filter_menu">
+                            <li class="filter_field">2020</li>
+                            <li class="filter_field">2010</li>
+                            <li class="filter_field">2000</li>
+                        </ul>
+                    </div>
+                </div>                
             </div>
         </section>
     <!-- </div> -->
@@ -97,14 +96,230 @@
 
 
     <!-- side bar starts here -->
-    side bar section
+        <!-- side bar section -->
     <!-- side bar Ends here -->
 
     <!-- gallery section Starts here -->
-     <section>
-         box 1,
-         box 2,
-         box 3,
+     <section class="cars_section">
+
+        <div class="cars_gallery">
+            <h1>احدث الاضافات</h1>
+            <button class="pre_btn">
+                <img src="./images/arrow.png" alt="">
+            </button>
+            <button class="nxt_btn">
+                <img src="./images/arrow.png" alt="">
+            </button>
+            <div class="cars_conatainer">
+
+                <div class="car_card">
+                    <div class="car_image">
+                        <span class="disccount_tag">50% off</span>
+                        <img class="car_thumb" src="./images/cars/10.jpeg" alt="">
+                        <button class="card_button">like</button>
+                    </div>
+
+                    <div class="car_info">
+                        <div class="car_detail">
+                            <div class="car_row_info">
+                                <span>corrlella</span>
+                                <span> الموديل</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>toyota</span>
+                                <span> نوع السيارة</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>2007</span>
+                                <span> سنة الصنع</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>300$</span>
+                                <span> السعر</span>
+                            </div>
+                        </div>
+
+                        <button class="show_datail_buuton">اعرض التفاصيل</button>
+                    </div>
+                </div>
+            
+
+                <div class="car_card">
+                    <div class="car_image">
+                        <span class="disccount_tag">50% off</span>
+                        <img class="car_thumb" src="./images/cars/5.jpeg" alt="">
+                        <button class="card_button">like</button>
+                    </div>
+
+                    <div class="car_info">
+                        <div class="car_detail">
+                            <div class="car_row_info">
+                                <span>corrlella</span>
+                                <span> الموديل</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>toyota</span>
+                                <span> نوع السيارة</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>2007</span>
+                                <span> سنة الصنع</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>300$</span>
+                                <span> السعر</span>
+                            </div>
+                        </div>
+
+                        <button class="show_datail_buuton">اعرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <div class="car_card">
+                    <div class="car_image">
+                        <span class="disccount_tag">50% off</span>
+                        <img class="car_thumb" src="./images/cars/4.jpeg" alt="">
+                        <button class="card_button">like</button>
+                    </div>
+
+                    <div class="car_info">
+                        <div class="car_detail">
+                            <div class="car_row_info">
+                                <span>corrlella</span>
+                                <span> الموديل</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>toyota</span>
+                                <span> نوع السيارة</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>2007</span>
+                                <span> سنة الصنع</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>300$</span>
+                                <span> السعر</span>
+                            </div>
+                        </div>
+
+                        <button class="show_datail_buuton">اعرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <div class="car_card">
+                    <div class="car_image">
+                        <span class="disccount_tag">50% off</span>
+                        <img class="car_thumb" src="./images/cars/3.jpeg" alt="">
+                        <button class="card_button">like</button>
+                    </div>
+
+                    <div class="car_info">
+                        <div class="car_detail">
+                            <div class="car_row_info">
+                                <span>corrlella</span>
+                                <span> الموديل</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>toyota</span>
+                                <span> نوع السيارة</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>2007</span>
+                                <span> سنة الصنع</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>300$</span>
+                                <span> السعر</span>
+                            </div>
+                        </div>
+
+                        <button class="show_datail_buuton">اعرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <div class="car_card">
+                    <div class="car_image">
+                        <span class="disccount_tag">50% off</span>
+                        <img class="car_thumb" src="./images/cars/6.jpeg" alt="">
+                        <button class="card_button">like</button>
+                    </div>
+
+                    <div class="car_info">
+                        <div class="car_detail">
+                            <div class="car_row_info">
+                                <span>corrlella</span>
+                                <span> الموديل</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>toyota</span>
+                                <span> نوع السيارة</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>2007</span>
+                                <span> سنة الصنع</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>300$</span>
+                                <span> السعر</span>
+                            </div>
+                        </div>
+
+                        <button class="show_datail_buuton">اعرض التفاصيل</button>
+                    </div>
+                </div>
+
+                <div class="car_card">
+                    <div class="car_image">
+                        <span class="disccount_tag">50% off</span>
+                        <img class="car_thumb" src="./images/cars/7.jpeg" alt="">
+                        <button class="card_button">like</button>
+                    </div>
+
+                    <div class="car_info">
+                        <div class="car_detail">
+                            <div class="car_row_info">
+                                <span>corrlella</span>
+                                <span> الموديل</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>toyota</span>
+                                <span> نوع السيارة</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>2007</span>
+                                <span> سنة الصنع</span>
+                            </div>
+
+                            <div class="car_row_info">
+                                <span>300$</span>
+                                <span> السعر</span>
+                            </div>
+                        </div>
+
+                        <button class="show_datail_buuton">اعرض التفاصيل</button>
+                    </div>
+                </div>
+
+            
+            </div>
+        </div>  
      </section>
     <!-- gallery secton Ends here -->
 
@@ -128,22 +343,11 @@
     </section>
     <!-- social media footer ends here -->
 
-<script type="application/javascript">
+   <script>
+     
+   </script>
 
-    const navBar = document.getElementById("nav");
-    const hideIcon = document.getElementsByClassName("fa-xmark")[0];
-    const showIcon = document.getElementsByClassName("fa-bars")[0];
-    // console.log(hideIcon);
-    
-    function showMenu() {
-        navBar.style.left = "0";
-        hideIcon.style.opacity = "1";
-    }
-    
-    function hideMenu() {
-        navBar.style.left = "-30%";
-        showIcon.style.opacity = "1";
-    }
-</script>
+    <script src="jquery/jquery-3.6.0.js" async></script>
+    <script src="script.js" async></script>
 </body>
 </html>
