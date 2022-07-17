@@ -63,14 +63,17 @@ function ready() {
 
 
     // first get the product  container and the and the next , preview buttons by the DOM  
-    const productContainers = [...document.querySelectorAll('.product_conatainer')];
+    const carsContainers = [...document.querySelectorAll('.cars_conatainer')];
     const nxtBtn = [...document.querySelectorAll('.nxt_btn')];
     const preBtn = [...document.querySelectorAll('.pre_btn')];
 
-    productContainers.forEach((item, i) => {
-        let cardContanier = [...item.querySelectorAll(".product_card")] ; // get the card conainer to later get it's width as a reference to sroll left and right
+
+    carsContainers.forEach((item, i) => {
+        let cardContanier = [...item.querySelectorAll(".car_card")] ; // get the card conainer to later get it's width as a reference to sroll left and right
         let containerDimensions = cardContanier[i].getBoundingClientRect();// get DOMRect info which contain the width
         // console.log(containerDimensions);
+        let oldPoint = containerDimensions.width ;
+        console.log(oldPoint);
         let containerWidth = containerDimensions.width;
 
         // when ever scroll left or right add or subtract the card width fom the all container width
@@ -80,6 +83,9 @@ function ready() {
 
         preBtn[i].addEventListener('click', () => {
             item.scrollLeft -= containerWidth;
+            nxtBtn[i].style.display = "block";
+            let newPoint = containerDimensions.x;
+            console.log(newPoint);
         })
         })
 

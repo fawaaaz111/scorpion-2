@@ -10,8 +10,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    scroll-padding-top: 100px
-    ;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -162,7 +161,7 @@ header nav {
         background-color: var(--accent);
         left: 0%;
         top: 0;
-        z-index: 1;
+        z-index: 100;
         flex-direction: column;
         text-align: center;
         justify-content: start;
@@ -277,7 +276,7 @@ header nav {
     align-items: center;
     cursor: pointer;
 }
-.search_box .search_button {
+.search_box .search_button{
     display: inline-block;
     padding: 15px;
     font-size: 1.1em;
@@ -355,6 +354,7 @@ header nav {
     border-radius: 10px 10px 0 0;
     border-left: 0.5px solid #111;
     border-right: 0.5px solid #111;
+    z-index: 99;
 }
 .filter_item ul.active {
     display: block;
@@ -454,50 +454,59 @@ header nav {
     }
 }
 
-/* ------------------------------ products section ------------------------- */
-.cars_gallery
- {
+/* ------------------------------ cars gallery section ------------------------- */
+
+  .cars_section {
+    margin: 90px 0;
+  }
+  .cars_gallery {
+    direction: rtl;
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 0;
   }
-  .product_category {
-    padding: 0 10vw;
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 40px;
-    text-transform: capitalize;
+  .cars_gallery h1 {
+    margin: 0 auto 1em;
+    width: 90%;
   }
-  
-  .product_conatainer {
-    padding: 0 5vw;
+  .cars_conatainer {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
     display: flex;
     scroll-behavior: smooth;
     overflow-x: auto;
-    background-color: #eee;
   }
-  .product_conatainer::-webkit-scrollbar {
-    display: none;
+  .cars_conatainer::-webkit-scrollbar {
+    display:initial;
   }
   
-  .product_card {
+  .car_card {     
+    direction: ltr;
+    position: relative;
+    border : 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--lite-black);
+    color: var(--primary);
+    font-weight: lighter;
+    border-radius: 10px;
     flex: 0 0 auto;
     width: 250px;
-    height: 450px;
+    padding: 0;
     margin-right: 20px;
   }
   
-  .product_iamges {  
+  .car_image {
     border-radius: 10px;
     position: relative;
     width: 100%;
-    height: 350px;
     overflow: hidden;
+    height: 10em;
   }
-  .product_thumb {
+  .car_thumb {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit:scale-down;
+    object-fit:cover;
   }
   
   .disccount_tag {
@@ -505,73 +514,73 @@ header nav {
     background: #fff;
     padding: 5px;
     border-radius: 5px;
-    color: #009688;
-    right: 10px;
-    top: 10px;
+    color: var(--accent);
+    right: 5px;
+    top: 5px;
     text-transform: capitalize;
   }
   .card_button{
     position:absolute ;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10%;
+    /* transform: translateX(-50%); */
     padding: 10px;
-    width: 90%;
+    width: 20%;
     text-transform: capitalize;
-    border: none;
-    outline: none;
     background-color: #fff;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.4s;
     opacity: 0;
   }
-  .product_card:hover .card_button {
+  .car_card:hover .card_button {
     opacity: 1;
   }
   .card_button:hover {
-    background-color: #009688;
+    background-color: var(--accent);
     color: #fff;
   }
-  
-  .product_info {
+
+  .car_info { 
+    padding: 1em 0;
     width: 100%;
-    height: 100%;
-    padding-top: 10px;
-  }
-  .product_brand {
-    text-transform: uppercase;
-  }
-  .product_short_description {
-    width: 100%;
-    height: 20px;
-    line-height: 20px;
+    min-height: 40%;
     overflow: hidden;
+  }
+  .car_detail {
+    display: flex;
+    width: 60%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .car_row_info {
+    display: flex;
+    justify-content: space-between;
+  }
+  .show_datail_buuton {
+    display: block;
+    padding: .8em;
+    width: 60%;
+    margin: 1em auto 0;
     text-transform: capitalize;
-    margin: 5px 0;
-    opacity: 0.5;
+    background-color: var(--accent);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
   }
-  
-  .price {
-    font-size: 22px;
-    font-weight: 900;
-  }
-  .actual_price {
-    margin-left: 5px;
-    opacity: 0.5;
-    text-decoration: line-through;
-  }
+
   
   .pre_btn, .nxt_btn{
     border: none;
-    width: 10vw;
+    width: 8vw;
     height: 100%;
     position: absolute;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100% );
+    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100% ); */
+    background-color: transparent;
     cursor: pointer;
     z-index: 9;
   }
@@ -582,39 +591,58 @@ header nav {
   .nxt_btn {
     right: 0;
   }
-  
   .pre_btn img, .nxt_btn img{
     opacity: 0.2;
   }
   .pre_btn:hover img, .nxt_btn:hover img{
     opacity: 1;
   }
-  
-  .collection_container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: (2, 1fr);
-    grid-gap: 10px;
+  .nxt_btn {
+    display: none;
   }
-  .collection {
-    position: relative;
-  }
-  .collection img {
-    width: 100%;
-    height: 100%;
-    object-fit:fill;
-  }
-  .collection p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    text-transform: capitalize;
-    font-size: 50px;
-    color: #fff;
-  }
-  .collection:nth-col(3) {
-    grid-column: span 2;
-    margin-bottom: 10px;
-  }
+
+  /* --------------------------------------------------------------- */
+/* media query for car saerch and search filters */
+
+/* less than 768px */
+
+@media only screen and (max-width: 768px) {
+    .cars_section {
+        margin: 50px 0;
+      }
+    .cars_gallery {
+        font-size: 14px;
+    }
+    .car_card  {
+        width: 180px;
+    }
+}
+
+
+/* less than 600px */
+
+@media only screen and (max-width: 600px) {
+    .cars_section {
+        margin: 20px 0;
+      }
+    .cars_gallery {
+        font-size: 13px;
+    }
+    .car_card  {
+        width: 170px;
+    }
+}
+
+/* less than 300px */
+
+@media only screen and (max-width: 350px) {
+    .cars_section {
+        margin: 10px 0;
+      }
+    .cars_gallery {
+        font-size: 11px;
+    }
+    .car_card  {
+        width: 170px;
+    }
+}
