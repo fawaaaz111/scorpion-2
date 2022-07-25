@@ -348,7 +348,7 @@ header nav {
     display: none;
     position: absolute;
     background-color: var(--primary);
-    top: 30px;
+    top: 40px;
     width: 100%;
     padding: 10% 0 0 0;
     text-align: center;
