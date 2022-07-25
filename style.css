@@ -277,6 +277,7 @@ header nav {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    height: 3em;
 }
 .search_box .search_button{
     display: inline-block;
@@ -398,10 +399,6 @@ header nav {
         font-size: 14px;
         text-align: right;
     }
-    /* .filter_item ul {
-        top: 50px
-    } 
-    */
     .filter_type {
         padding: 6px 10px;
         justify-content: end;
@@ -422,7 +419,7 @@ header nav {
     /* filters boxs */
     .filter_item {
         height: 25px;
-        font-size: 12px;
+        font-size: 13px;
         text-align: right;
     }
     .filter_type {
