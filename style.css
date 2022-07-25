@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
 /* --------------------css for all------------------------------------------------ */
 * {
     padding: 0;
@@ -22,6 +24,7 @@ body {
     --secondary : #eee ;
     --accent : #86c232;
     --lite-black : #222629;
+    --black : #000;
 }
 a , a:hover {
     text-decoration: none;
@@ -65,7 +68,7 @@ ul {
 }
 .Logo a span {
     padding: 10%;
-    font-family :cursive;
+    font-family: 'Edu NSW ACT Foundation', cursive;
     font-size: 2.5em;
     font-weight: bold;
 }
@@ -263,7 +266,6 @@ header nav {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    /* flex-direction: column-reverse; */
     justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -280,7 +282,7 @@ header nav {
     display: inline-block;
     padding: 15px;
     font-size: 1.1em;
-    min-height: 100%;
+    height: 100%;
     border-radius: 10px 0 0 10px;
     background-color: var(--accent);
 }
@@ -289,9 +291,9 @@ header nav {
 }
 .search_box input {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     padding: 15px;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: var(--lite-black);
     border-radius: 0px 10px 10px 0;
     text-align: right;
@@ -305,7 +307,6 @@ header nav {
 /* filters boxs */
 .filters_box {
     flex-basis: 70%;
-    /* flex-shrink: 0; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -315,12 +316,11 @@ header nav {
     flex-basis: 30%;
     height: 35px;
     margin: 5px;
-    background-color: var(--secondary);
-    /* border: 2px solid red; */
+    background-color: var(--primary);
     font-size: 16px;
     font-weight: lighter;
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .filter_item:focus {
     outline: var(--accent);
@@ -346,28 +346,35 @@ header nav {
 .filter_item ul {
     display: none;
     position: absolute;
-    background-color: white;
-    top: 70px;
+    background-color: var(--primary);
+    top: 30px;
     width: 100%;
-    padding: 10%;
+    padding: 10% 0 0 0;
     text-align: center;
-    border-radius: 10px 10px 0 0;
-    border-left: 0.5px solid #111;
-    border-right: 0.5px solid #111;
+    border-radius: 0px 0px 5px 5px;
+    border: 0.5px solid var(--black);
+    border-top: none;
     z-index: 99;
 }
 .filter_item ul.active {
     display: block;
 }
 .filter_item ul li  {
+    width: 100%;
     padding-bottom: 10%;
     user-select: none;
 }
-.filter_item ul li:last-child {
+.filter_item ul li:hover {
+    background-color: var(--secondary);
+}
+/* .filter_item ul li:last-child {
     padding-bottom: 0%;
 }
+*/
 .filter_item ul li a {
-    color: black;
+    display: block;
+    color: var(--black);
+    /* border-top: .5px solid var(--lite-black); */
 }
 
 /* --------------------------------------------------------------- */
@@ -391,6 +398,10 @@ header nav {
         font-size: 14px;
         text-align: right;
     }
+    /* .filter_item ul {
+        top: 50px
+    } 
+    */
     .filter_type {
         padding: 6px 10px;
         justify-content: end;
