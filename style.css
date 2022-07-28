@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
 /* --------------------css for all------------------------------------------------ */
 * {
     padding: 0;
@@ -10,8 +12,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    scroll-padding-top: 100px
-    ;
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
     --secondary : #eee ;
     --accent : #86c232;
     --lite-black : #222629;
-    --balck : #000;
+    --black : #000;
 }
 a , a:hover {
     text-decoration: none;
@@ -67,7 +68,7 @@ ul {
 }
 .Logo a span {
     padding: 10%;
-    font-family :cursive;
+    font-family: 'Edu NSW ACT Foundation', cursive;
     font-size: 2.5em;
     font-weight: bold;
 }
@@ -265,7 +266,6 @@ header nav {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    /* flex-direction: column-reverse; */
     justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -277,12 +277,13 @@ header nav {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    height: 3em;
 }
 .search_box .search_button{
     display: inline-block;
     padding: 15px;
     font-size: 1.1em;
-    min-height: 100%;
+    height: 100%;
     border-radius: 10px 0 0 10px;
     background-color: var(--accent);
 }
@@ -291,9 +292,9 @@ header nav {
 }
 .search_box input {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     padding: 15px;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: var(--lite-black);
     border-radius: 0px 10px 10px 0;
     text-align: right;
@@ -307,7 +308,6 @@ header nav {
 /* filters boxs */
 .filters_box {
     flex-basis: 70%;
-    /* flex-shrink: 0; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -317,12 +317,11 @@ header nav {
     flex-basis: 30%;
     height: 35px;
     margin: 5px;
-    background-color: var(--secondary);
-    /* border: 2px solid red; */
+    background-color: var(--primary);
     font-size: 16px;
     font-weight: lighter;
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .filter_item:focus {
     outline: var(--accent);
@@ -348,28 +347,35 @@ header nav {
 .filter_item ul {
     display: none;
     position: absolute;
-    background-color: white;
-    top: 70px;
+    background-color: var(--primary);
+    top: 40px;
     width: 100%;
-    padding: 10%;
+    padding: 10% 0 0 0;
     text-align: center;
-    border-radius: 10px 10px 0 0;
-    border-left: 0.5px solid #111;
-    border-right: 0.5px solid #111;
+    border-radius: 0px 0px 5px 5px;
+    border: 0.5px solid var(--black);
+    border-top: none;
     z-index: 99;
 }
 .filter_item ul.active {
     display: block;
 }
 .filter_item ul li  {
+    width: 100%;
     padding-bottom: 10%;
     user-select: none;
 }
-.filter_item ul li:last-child {
+.filter_item ul li:hover {
+    background-color: var(--secondary);
+}
+/* .filter_item ul li:last-child {
     padding-bottom: 0%;
 }
+*/
 .filter_item ul li a {
-    color: black;
+    display: block;
+    color: var(--black);
+    /* border-top: .5px solid var(--lite-black); */
 }
 
 /* --------------------------------------------------------------- */
@@ -413,7 +419,7 @@ header nav {
     /* filters boxs */
     .filter_item {
         height: 25px;
-        font-size: 12px;
+        font-size: 13px;
         text-align: right;
     }
     .filter_type {
@@ -456,69 +462,59 @@ header nav {
     }
 }
 
-/* ------------------------------ products section ------------------------- */
-/* .cars_section{
-    margin: 5em 0;
-    width: 100vw;
-}
-.cars_gallery
- {
-    /* background-color: #777; */
-    /* width: 90%;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-  } */
-  /* .cars_category {
-    padding: 0 10vw;
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 40px;
-    text-transform: capitalize;
-  } */
+/* ------------------------------ cars gallery section ------------------------- */
+
+  .cars_section {
+    margin: 90px 0;
+  }
   .cars_gallery {
+    direction: rtl;
     position: relative;
     overflow: hidden;
-    padding: 20px;
+    padding: 20px 0;
+  }
+  .cars_gallery h1 {
+    margin: 0 auto 1em;
+    width: 90%;
   }
   .cars_conatainer {
     position: relative;
-    padding: 0 5vw;
+    margin: 0 auto;
+    width: 90%;
     display: flex;
-    /* flex-direction:row; */
     scroll-behavior: smooth;
-    overflow-x:auto;
-    /* background-color: #eee; */
+    overflow-x: auto;
   }
   .cars_conatainer::-webkit-scrollbar {
     display:initial;
   }
   
-  .car_card { 
+  .car_card {     
+    direction: ltr;
     position: relative;
-    border : 1px solid rgb(81, 65, 65);
+    border : 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--lite-black);
+    color: var(--primary);
+    font-weight: lighter;
     border-radius: 10px;
     flex: 0 0 auto;
-    width: 300px;
+    width: 250px;
     padding: 0;
     margin-right: 20px;
-    /* overflow: auto; */
   }
   
-  .car_image {  
-    /* border : 1px solid rgb(47, 0, 255); */
+  .car_image {
     border-radius: 10px;
     position: relative;
     width: 100%;
     overflow: hidden;
-    min-height: 12em;
+    height: 10em;
   }
   .car_thumb {
     display: block;
     width: 100%;
-    min-height: 100%;
-    object-fit:contain;
+    height: 100%;
+    object-fit:cover;
   }
   
   .disccount_tag {
@@ -527,20 +523,18 @@ header nav {
     padding: 5px;
     border-radius: 5px;
     color: var(--accent);
-    right: 10px;
-    top: 10px;
+    right: 5px;
+    top: 5px;
     text-transform: capitalize;
   }
   .card_button{
     position:absolute ;
     bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 10%;
+    /* transform: translateX(-50%); */
     padding: 10px;
-    width: 80%;
+    width: 20%;
     text-transform: capitalize;
-    border: none;
-    outline: none;
     background-color: #fff;
     border-radius: 5px;
     cursor: pointer;
@@ -556,9 +550,9 @@ header nav {
   }
 
   .car_info { 
-    /* border: 5px solid rgb(0, 255, 8); */
+    padding: 1em 0;
     width: 100%;
-    height: 30%;
+    min-height: 40%;
     overflow: hidden;
   }
   .car_detail {
@@ -577,24 +571,24 @@ header nav {
     width: 60%;
     margin: 1em auto 0;
     text-transform: capitalize;
-    border: none;
-    outline: none;
     background-color: var(--accent);
     border-radius: 5px;
     cursor: pointer;
     transition: 0.4s;
   }
+
   
   .pre_btn, .nxt_btn{
     border: none;
-    width: 10vw;
+    width: 8vw;
     height: 100%;
     position: absolute;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100% );
+    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100% ); */
+    background-color: transparent;
     cursor: pointer;
     z-index: 9;
   }
@@ -605,13 +599,61 @@ header nav {
   .nxt_btn {
     right: 0;
   }
-  
   .pre_btn img, .nxt_btn img{
     opacity: 0.2;
   }
   .pre_btn:hover img, .nxt_btn:hover img{
     opacity: 1;
   }
+  .nxt_btn {
+    display: none;
+  }
+
+  /* --------------------------------------------------------------- */
+/* media query for car saerch and search filters */
+
+/* less than 768px */
+
+@media only screen and (max-width: 768px) {
+    .cars_section {
+        margin: 50px 0;
+      }
+    .cars_gallery {
+        font-size: 14px;
+    }
+    .car_card  {
+        width: 180px;
+    }
+}
+
+
+/* less than 600px */
+
+@media only screen and (max-width: 600px) {
+    .cars_section {
+        margin: 20px 0;
+      }
+    .cars_gallery {
+        font-size: 13px;
+    }
+    .car_card  {
+        width: 170px;
+    }
+}
+
+/* less than 300px */
+
+@media only screen and (max-width: 350px) {
+    .cars_section {
+        margin: 10px 0;
+      }
+    .cars_gallery {
+        font-size: 11px;
+    }
+    .car_card  {
+        width: 170px;
+    }
+}
 
 /* *************   about us   ************** */
 
