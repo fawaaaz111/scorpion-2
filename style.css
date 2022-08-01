@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Orelega+One&family=Poppins:wght@300;400;500;700&display=swap');
 /* --------------------css for all------------------------------------------------ */
 * {
     padding: 0;
@@ -22,6 +24,7 @@ body {
     --secondary : #eee ;
     --accent : #86c232;
     --lite-black : #222629;
+    --black : #000;
 }
 a , a:hover {
     text-decoration: none;
@@ -65,7 +68,7 @@ ul {
 }
 .Logo a span {
     padding: 10%;
-    font-family :cursive;
+    font-family: 'Edu NSW ACT Foundation', cursive;
     font-size: 2.5em;
     font-weight: bold;
 }
@@ -263,7 +266,6 @@ header nav {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    /* flex-direction: column-reverse; */
     justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -275,12 +277,13 @@ header nav {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    height: 3em;
 }
 .search_box .search_button{
     display: inline-block;
     padding: 15px;
     font-size: 1.1em;
-    min-height: 100%;
+    height: 100%;
     border-radius: 10px 0 0 10px;
     background-color: var(--accent);
 }
@@ -289,9 +292,9 @@ header nav {
 }
 .search_box input {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
     padding: 15px;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: var(--lite-black);
     border-radius: 0px 10px 10px 0;
     text-align: right;
@@ -305,7 +308,6 @@ header nav {
 /* filters boxs */
 .filters_box {
     flex-basis: 70%;
-    /* flex-shrink: 0; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -315,12 +317,11 @@ header nav {
     flex-basis: 30%;
     height: 35px;
     margin: 5px;
-    background-color: var(--secondary);
-    /* border: 2px solid red; */
+    background-color: var(--primary);
     font-size: 16px;
     font-weight: lighter;
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .filter_item:focus {
     outline: var(--accent);
@@ -346,28 +347,35 @@ header nav {
 .filter_item ul {
     display: none;
     position: absolute;
-    background-color: white;
-    top: 70px;
+    background-color: var(--primary);
+    top: 40px;
     width: 100%;
-    padding: 10%;
+    padding: 10% 0 0 0;
     text-align: center;
-    border-radius: 10px 10px 0 0;
-    border-left: 0.5px solid #111;
-    border-right: 0.5px solid #111;
+    border-radius: 0px 0px 5px 5px;
+    border: 0.5px solid var(--black);
+    border-top: none;
     z-index: 99;
 }
 .filter_item ul.active {
     display: block;
 }
 .filter_item ul li  {
+    width: 100%;
     padding-bottom: 10%;
     user-select: none;
 }
-.filter_item ul li:last-child {
+.filter_item ul li:hover {
+    background-color: var(--secondary);
+}
+/* .filter_item ul li:last-child {
     padding-bottom: 0%;
 }
+*/
 .filter_item ul li a {
-    color: black;
+    display: block;
+    color: var(--black);
+    /* border-top: .5px solid var(--lite-black); */
 }
 
 /* --------------------------------------------------------------- */
@@ -411,7 +419,7 @@ header nav {
     /* filters boxs */
     .filter_item {
         height: 25px;
-        font-size: 12px;
+        font-size: 13px;
         text-align: right;
     }
     .filter_type {
@@ -568,6 +576,9 @@ header nav {
     cursor: pointer;
     transition: 0.4s;
   }
+  .show_datail_buuton:hover {
+    background-color: var(--primary);
+  }
 
   
   .pre_btn, .nxt_btn{
@@ -633,7 +644,7 @@ header nav {
     }
 }
 
-/* less than 300px */
+/* less than 350px */
 
 @media only screen and (max-width: 350px) {
     .cars_section {
@@ -644,5 +655,192 @@ header nav {
     }
     .car_card  {
         width: 170px;
+    }
+}
+
+/* *************   about us   ************** */
+
+#about_us {
+    width: 100wh;
+    margin: 2em 0;
+}
+.about_us_info {
+    direction: rtl;
+    display: flex;
+    width: 100%;
+    min-height: 30em ;
+    background-color: var(--accent);
+    color: var(--balck);
+    padding: 3em 5em;
+    justify-content: space-between;
+}
+.about_us_info h1 {
+    font-size: 3em;
+    color: var(--primary);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 38%;
+    margin: 0 0 0 1.1em ;
+    padding: 0 0.5em 0 0.7em;
+    text-transform: capitalize;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, .3) ,rgba(0, 0, 0, .1)); */
+    box-shadow: -4px 4px 10px -3px var(--secondary);
+    background: rgba(89, 89, 89, 0.7);
+    border-radius: 5px;
+}
+.about_us_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3em 0;
+}
+.about_us_details p {
+    font-size: 1.2em;
+    font-weight: 400;
+    text-align: right;
+    line-height: 2;
+}
+.about_us_details span {
+    color: var(--primary);
+    text-transform:uppercase;
+    margin: 0 0 0 .5em;
+}
+.about_us_details a {
+    border: 1px solid var(--primary);
+    display: inline-block;
+    padding: 0 .5em;
+    margin: 0 .3em;
+    transition: .3s;
+}
+.about_us_details a:hover {
+    background-color: var(--lite-black);
+    border: none;
+}
+
+/* ***********      footer section      ******************************************* */
+
+#footer {
+    background-color: var(--lite-black);
+    margin: 5em 0 0 0;
+    padding: 3em 5em;
+}
+#footer p {
+    margin: 5em 0 0;
+    padding: 1em 0 0 0;
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 1em;
+    border-top: 1px solid var(--secondary);
+    text-align: center;
+}
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.links div {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.links div span, .links div a {
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 1em;
+    padding: .5em 0;
+    transition: .3s;
+}
+.links div span:hover, .links div a:hover {
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+}
+
+ /* --------------------------------------------------------------- */
+/* media query for about us and footer sectoin */
+
+/* less than 768px */
+
+@media only screen and (max-width: 768px) {
+    .about_us_info h1 {
+        font-size: 2.0em;
+        flex: 1 0 40%;
+    }
+    .about_us_details p {
+        font-size: 1.0em;
+    }
+
+    /*  ********** footer   ******** */
+    #footer p {
+        font-size: .9em;
+    }
+    .links div span, .links div a {
+        font-size: .9em;
+    }
+}
+
+/* less than 600px */
+
+@media only screen and (max-width: 600px) {
+    .about_us_info {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items:space-between;
+        padding: 1em 3em;
+    }
+    .about_us_info h1 {
+        font-size: 1.7em;
+        margin: 0 0 1.1em 0 ;
+        padding: 0;
+        flex: 1 0 100%;
+    }
+    .about_us_details {
+        justify-content:center;
+        padding-top: 1em;
+    }
+    .about_us_details p {
+        font-size: 1.0em;
+    }
+
+    /*  ********** footer   ******** */
+    #footer p {
+        font-size: .9em;
+        margin: 2em 0 0;
+    }
+    .links div span, .links div a {
+        font-size: .9em;
+    }
+    .links {
+        flex-direction: column;
+    }
+    .links div {
+        flex: 100%;
+        margin-bottom: 3em;
+    }
+    .links div:last-child {
+        margin-bottom: 0em;
+    }
+}
+
+/* less than 350px */
+
+@media only screen and (max-width: 350px) {
+    .about_us_info h1 {
+        font-size: 1.2em;
+    }
+    .about_us_details p {
+        font-size: .8em;
+    }
+    /*  ********** footer   ******** */
+    #footer p {
+        font-size: .7em;
+    }
+    .links div span, .links div a {
+        font-size: .7em;
+    }
+    .links div {
+        margin-bottom: 2em;
     }
 }
