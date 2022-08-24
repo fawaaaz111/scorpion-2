@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scorpion Cars Trade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="login_signup_forms">
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">تسجيل الدخول</span>
+
+                <form action="#">
+                    <div class="input_feild">
+                        <input type="text" placeholder="ادخل اسم المستخدم" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+
+                    <div class="input_feild">
+                        <input type="password" class="password" placeholder="ادخل كلمة السر" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-regular fa-eye-slash"></i>
+                    </div>
+
+
+                    <div class="checkbox_text">
+                        <div class="checkbox_content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">تذكرني</label>
+                        </div>
+
+                        <a href="#" class="text">نسيت كلمة السر ؟</a>
+                    </div>
+
+                    <div class="input_feild button">
+                        <input type="button" value="سجل دخول الان">
+                    </div>
+                </form>
+
+
+                <div class="login_signup">
+                    <span class="text">لست عضوا ؟
+                        <a href="#" class="text signup_link">انشاء حساب</a>
+                    </span>
+                </div>
+    
+            </div>
+
+
+
+            <!-- Registraion form -->
+            <div class="form signup">
+                <span class="title">انشاء حساب</span>
+
+                <form action="#">
+                    <div class="input_feild">
+                        <input type="text" placeholder="ادخل اسم المستخدم" required>
+                        <i class="fa-regular fa-user icon"></i>
+                    </div>
+
+                    <div class="input_feild">
+                        <input type="text" placeholder="ادخل الايميل الخاص بك" required>
+                        <i class="fa-solid fa-envelope icon"></i>
+                    </div>
+
+                    <div class="input_feild">
+                        <input type="password" class="password" placeholder="اكتب كلمة سر" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <!-- <i class="fa-regular fa-eye-slash"></i> -->
+                    </div>
+
+                    <div class="input_feild">
+                        <input type="password" class="password" placeholder="اعد ادخال كلمة السر" required>
+                        <i class="fa-solid fa-lock icon"></i>
+                        <i class="fa-regular fa-eye-slash"></i>
+                    </div>
+
+                    <!-- <div class="checkbox_text">
+                        <div class="checkbox_content">
+                            <input type="checkbox" id="sigCheck">
+                            <label for="sigCheck" class="text">تذكرني</label>
+                        </div>
+                    </div> -->
+
+                    <div class="input_feild button">
+                        <input type="button" value="انشئ الحساب">
+                    </div>
+                </form>
+
+
+                <div class="login_signup">
+                    <span class="text">بالفعل عضوا ؟
+                        <a href="#" class="text login_link">سجل دخول</a>
+                    </span>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
