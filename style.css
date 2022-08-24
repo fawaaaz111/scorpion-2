@@ -23,6 +23,7 @@ body {
     --primary : #fff;
     --secondary : #eee ;
     --accent : #86c232;
+    --accent_shade : #71a626;
     --lite-black : #222629;
     --black : #000;
 }
@@ -923,4 +924,170 @@ header nav {
     .links div {
         margin-bottom: 2em;
     }
+}
+
+
+
+
+/*  login & signup forms style */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,400;1,600&display=swap');
+
+.login_signup_forms{
+    direction: rtl;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary);
+}
+.container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 441px;
+    width: 200%;
+    transition: height 0.3s ease;
+}
+.container.active .forms {
+    height: 601px;
+}
+.container.active .login {
+    margin-right: -50%;
+    opacity: 0;
+    transition: margin-left 0.3s ease , opacity 0.3s ease;;
+}
+.container .signup {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.container.active .signup {
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+.container .form{
+    width: 50%;
+    padding: 30px;
+    background-color: #fff;
+    transition: margin-left 0.3s ease;
+}
+.container .form .title{
+    position: relative;
+    display: inline-block;
+    font-size: 27px;
+    font-weight: 600;
+}
+.form .title::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    width: 50px;
+    background-color:var(--accent);
+    border-radius: 25px;
+}
+
+
+/* form input feild */
+.form .input_feild {
+    margin-top: 30px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+.input_feild input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.4s ease;
+    
+}
+.input_feild input:is(:focus, :valid) {
+    border-bottom-color: var(--accent) ;
+}
+.input_feild input:is(:focus, :valid) ~ i{
+    color: var(--accent) ;
+}
+.input_feild i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.4s ease;
+}
+.input_feild i.icon {
+    right: 0;
+}
+.input_feild i.fa-eye-slash, .input_feild i.fa-eye{
+    left: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+.form .checkbox_text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.checkbox_text .checkbox_content {
+    display: flex; 
+    align-items: center;
+}
+.checkbox_content input{
+    margin: 0 8px -2px 4px;
+    accent-color: var(--accent) ;
+}
+.form .text {
+    color: #333;
+    font-size: 14px;
+}
+.form a.text {
+    color: var(--accent) ;
+    text-decoration: none;
+}
+.form a:hover {
+    text-decoration: underline;
+}
+
+
+/* login in button and signup */
+.form .button {
+    margin-top: 35px;
+}
+.form .button input{
+    border: none;
+    background-color:var(--accent) ;
+    color: #fff;
+    font-size: 17px;
+    font-size: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.button input:hover {
+    background-color: var(--accent_shade)
+}
+
+.form .login_signup {
+    margin-top: 30px;
+    text-align: center ;
 }

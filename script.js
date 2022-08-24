@@ -63,6 +63,12 @@ function ready() {
 
     document.querySelector(".fa-bars").addEventListener("click", showMenu);
     document.querySelector(".fa-xmark").addEventListener("click", hideMenu);
+
+
+
+    // forms script
+    
+    
 }
 
     // funtion ready ends
@@ -147,3 +153,51 @@ function ready() {
         })
         })
 
+
+
+
+
+
+
+
+        const container = document.querySelector(".container"),
+      pwShowHide = document.querySelectorAll(".fa-eye-slash"),
+      pwFields = document.querySelectorAll(".password");
+      signUp = document.querySelector(".signup_link");
+      signIn = document.querySelector(".login_link");
+
+// console.log(signIn)
+
+//    js code to show/hide password and change icon
+pwShowHide.forEach(eyeIcon =>{
+    eyeIcon.addEventListener("click", ()=>{
+        pwFields.forEach(pwField => {
+            if(pwField.type === "password"){
+                pwField.type = "text"
+
+                pwShowHide.forEach(icon => {
+                    icon.classList.replace("fa-eye-slash" ,"fa-eye");
+                })
+            }else {
+                pwField.type = "password"
+
+                pwShowHide.forEach(icon => {
+                    icon.classList.replace("fa-eye" ,"fa-eye-slash");
+                })
+            }
+        })
+    })
+}
+)
+
+
+//  js code to appear sign up and login form
+
+
+signUp.addEventListener("click", ()=> {
+    container.classList.add("active");
+})
+
+signIn.addEventListener("click", ()=> {
+    container.classList.remove("active");
+})
