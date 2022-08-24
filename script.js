@@ -38,42 +38,103 @@ function ready() {
         });
     };
 
-    // hideMenu(navBar , showIcon);
-    // showMenu(navBar , hideIcon);
-}
+    // animate the like car  button to count up and down likes
+    const likeContent = [...document.querySelectorAll(".content")];
+    likeContent.forEach((l) => {
+        // console.log(index)
+        l.addEventListener("click", () => {
+            const likeBtn = l.querySelector(".like");
+            const heartBtn = l.querySelector(".heart");
+            const numberBtn = l.querySelector(".number");
 
-    // show and hide menu according to the view port width
+            likeBtn.classList.toggle("heart_active");
+            l.classList.toggle("heart_active");
+            heartBtn.classList.toggle("heart_active");
+            numberBtn.classList.toggle("heart_active");
+        })
+
+        });
+    // })
+
+    // hsow and  hide menu according to the view port width
     const navBar = document.getElementById("nav");
     const hideIcon = document.getElementsByClassName("fa-xmark")[0];
     const showIcon = document.getElementsByClassName("fa-bars")[0];
+
+    document.querySelector(".fa-bars").addEventListener("click", showMenu);
+    document.querySelector(".fa-xmark").addEventListener("click", hideMenu);
+}
+
+    // funtion ready ends
+    // building the call back function for different parts of the script 
+    // function likeFunc() {
+    //     // let target = this.target;
+    //     // console.log(target);
+    //     const content = [...document.querySelectorAll(".content")];
+    //     const likeBtn = [...document.querySelectorAll(".like")];
+    //     const heartBtn = [...document.querySelectorAll(".heart")];
+    //     const nimberBtn = [...document.querySelectorAll(".number")];
+
+    //     // console.log(content)
+    //     // switching (toggling) between the different status of like button to show and hide aniamtion
+    //     likeBtn.forEach(Element => {
+    //         Element.classList.toggle("heart_active");
+    //     })
+
+    //     content.forEach(Element => {
+    //         Element.classList.toggle("heart_active");
+    //     })
+
+    //     heartBtn.forEach(Element => {
+    //         Element.classList.toggle("heart_active");
+    //     })
+
+    //     nimberBtn.forEach(Element => {
+    //         Element.classList.toggle("heart_active");
+    //     })
         
+    //     // content.classList.toggle("heart_active");
+    //     // heartBtn.classList.toggle("heart_active");
+    //     // nimberBtn.classList.toggle("heart_active");
+
+    // }
+
+
+
+    // show menu according to the view port width
        function showMenu() {
+
+        const navBar = document.getElementById("nav");
+        const hideIcon = document.getElementsByClassName("fa-xmark")[0];
+        const showIcon = document.getElementsByClassName("fa-bars")[0];
 
         navBar.style.left = "0";
         navBar.style.display = "block";
         hideIcon.style.opacity = "1";
     }
     
-    function hideMenu () {
+    // hide menu according to the view port width
+    function hideMenu(event) {
 
-        navBar.style.left = "-70%";
-        navBar.style.display = "none";
+        let button = event.target;
+        button = button.parentElement.parentElement;
+        let showIcon = button.nextElementSibling;
+
+        button.style.left = "-70%";
+        button.style.display = "none";
         showIcon.style.opacity = "1";
     }
 
 
     // first get the product  container and the and the next , preview buttons by the DOM  
-    const carsContainers = [...document.querySelectorAll('.cars_conatainer')];
+    const productContainers = [...document.querySelectorAll('.cars_conatainer')];
     const nxtBtn = [...document.querySelectorAll('.nxt_btn')];
     const preBtn = [...document.querySelectorAll('.pre_btn')];
 
-
-    carsContainers.forEach((item, i) => {
+    productContainers.forEach((item, i) => {
         let cardContanier = [...item.querySelectorAll(".car_card")] ; // get the card conainer to later get it's width as a reference to sroll left and right
         let containerDimensions = cardContanier[i].getBoundingClientRect();// get DOMRect info which contain the width
         // console.log(containerDimensions);
-        let oldPoint = containerDimensions.width ;
-        console.log(oldPoint);
         let containerWidth = containerDimensions.width;
 
         // when ever scroll left or right add or subtract the card width fom the all container width
@@ -83,9 +144,6 @@ function ready() {
 
         preBtn[i].addEventListener('click', () => {
             item.scrollLeft -= containerWidth;
-            nxtBtn[i].style.display = "block";
-            let newPoint = containerDimensions.x;
-            console.log(newPoint);
         })
         })
 

@@ -305,7 +305,7 @@ header nav {
     outline: .5px solid var(--accent);
 }
 
-/* filters boxs */
+/*  ---------------- filters boxs   --------------- */
 .filters_box {
     flex-basis: 70%;
     display: flex;
@@ -368,14 +368,9 @@ header nav {
 .filter_item ul li:hover {
     background-color: var(--secondary);
 }
-/* .filter_item ul li:last-child {
-    padding-bottom: 0%;
-}
-*/
 .filter_item ul li a {
     display: block;
     color: var(--black);
-    /* border-top: .5px solid var(--lite-black); */
 }
 
 /* --------------------------------------------------------------- */
@@ -393,7 +388,7 @@ header nav {
         font-size: 1.1em;
     }
 
-    /* filters boxs */
+    /*  ------------- filters boxs  ------------ */
     .filter_item {
         height: 30px;
         font-size: 14px;
@@ -473,9 +468,23 @@ header nav {
     overflow: hidden;
     padding: 20px 0;
   }
-  .cars_gallery h1 {
+  .cars_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0 auto 1em;
     width: 90%;
+  }
+  .cars_gallery h1 {
+    display: inline-block;
+ }
+  .cars_header > a {
+    font-size: 2em;
+    color: var(--black);
+    border-bottom: 1px solid var(--black);
+  }
+  .cars_header > a:hover {
+    color: var(--accent);
   }
   .cars_conatainer {
     position: relative;
@@ -497,18 +506,30 @@ header nav {
     color: var(--primary);
     font-weight: lighter;
     border-radius: 10px;
-    flex: 0 0 auto;
+    flex: 0 0 25%;
     width: 250px;
+    min-height: 25em;
     padding: 0;
     margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: .4s;
+    /* box-shadow: 3px 3px 10px red ,
+                 -3px -3px 10px red ; */
   }
-  
+  .car_card:hover {
+    border: 1px solid var(--accent);
+}  
   .car_image {
     border-radius: 10px;
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 10em;
+    height: 14em;
+    transition: .4s;
+  }
+  .car_image:hover {
+    transform: scale(1.03);
   }
   .car_thumb {
     display: block;
@@ -531,7 +552,6 @@ header nav {
     position:absolute ;
     bottom: 10px;
     left: 10%;
-    /* transform: translateX(-50%); */
     padding: 10px;
     width: 20%;
     text-transform: capitalize;
@@ -548,7 +568,6 @@ header nav {
     background-color: var(--accent);
     color: #fff;
   }
-
   .car_info { 
     padding: 1em 0;
     width: 100%;
@@ -556,11 +575,74 @@ header nav {
     overflow: hidden;
   }
   .car_detail {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1em;
+    text-align: center;
     width: 60%;
     margin: 0 auto;
-    flex-direction: column;
   }
+  .heart_btn {
+    position: relative;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.content {
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .heart {
+    height: 4em;
+    width: 4em;
+    flex: 30%;
+    background: url("./images/img.png") no-repeat;
+    background-position: left;
+    background-size: 2900%;
+    position: absolute;
+    top: 50%;
+    left: 21%;
+    transform: translate(-50%, -50%);
+}
+.heart.heart_active {
+    background-position: right;
+    animation: animate .8s steps(28) 1;
+}
+.content.heart_active {
+    background-color: #fbd0d8;
+    border-color: #f9b9c4;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+.content .like {
+    margin-left: 30px;
+    font-family: sans-serif;
+    color: grey;
+}
+.like.heart_active {
+    color: black;
+}
+.content .number::before {
+    content: "12";
+    font-family: sans-serif;
+    color: #9c9496;
+    margin-left: 7px
+}
+.content .number.heart_active::before {
+    content: "13";
+    color: black;
+}
   .car_row_info {
     display: flex;
     justify-content: space-between;
@@ -579,18 +661,17 @@ header nav {
   .show_datail_buuton:hover {
     background-color: var(--primary);
   }
-
+  /*    -------------- like button end  -------------- */
   
   .pre_btn, .nxt_btn{
     border: none;
-    width: 8vw;
+    width: 5vw;
     height: 100%;
     position: absolute;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100% ); */
     background-color: transparent;
     cursor: pointer;
     z-index: 9;
@@ -603,13 +684,13 @@ header nav {
     right: 0;
   }
   .pre_btn img, .nxt_btn img{
-    opacity: 0.2;
+    opacity: 0.3;
   }
   .pre_btn:hover img, .nxt_btn:hover img{
     opacity: 1;
   }
   .nxt_btn {
-    display: none;
+    display:initial;
   }
 
   /* --------------------------------------------------------------- */
@@ -662,7 +743,7 @@ header nav {
 
 #about_us {
     width: 100wh;
-    margin: 2em 0;
+    margin: 0;
 }
 .about_us_info {
     direction: rtl;
@@ -685,7 +766,6 @@ header nav {
     margin: 0 0 0 1.1em ;
     padding: 0 0.5em 0 0.7em;
     text-transform: capitalize;
-    /* background: linear-gradient(to bottom, rgba(0, 0, 0, .3) ,rgba(0, 0, 0, .1)); */
     box-shadow: -4px 4px 10px -3px var(--secondary);
     background: rgba(89, 89, 89, 0.7);
     border-radius: 5px;
@@ -719,12 +799,12 @@ header nav {
     border: none;
 }
 
-/* ***********      footer section      ******************************************* */
+/*      --------------------------------footer section -----------------------  */
 
 #footer {
     background-color: var(--lite-black);
-    margin: 5em 0 0 0;
-    padding: 3em 5em;
+    margin: 0 0 0 0;
+    padding: 3em 5em 1.5em;
 }
 #footer p {
     margin: 5em 0 0;
@@ -808,7 +888,7 @@ header nav {
     #footer p {
         font-size: .9em;
         margin: 2em 0 0;
-    }
+    }b
     .links div span, .links div a {
         font-size: .9em;
     }
